@@ -1,65 +1,108 @@
-import Image from "next/image";
+"use client";
+
+import { useState, useCallback } from "react";
+import { projects } from "@/lib/projects";
+import Link from "next/link";
 
 export default function Home() {
+  const [projectIndex, setProjectIndex] = useState(0);
+  const [imageIndex, setImageIndex] = useState(0);
+
+  const project = projects[projectIndex];
+  const image = project.images[imageIndex];
+
+  const nextImage = useCallback(() => {
+    setImageIndex((i) => (i + 1) % project.images.length);
+  }, [project.images.length]);
+
+  const prevImage = useCallback(() => {
+    setImageIndex((i) => (i - 1 + project.images.length) % project.images.length);
+  }, [project.images.length]);
+
+  const nextProject = useCallback(() => {
+    setProjectIndex((i) => (i + 1) % projects.length);
+    setImageIndex(0);
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className="h-screen w-screen flex flex-col relative select-none">
+      {/* Top bar */}
+      <div className="flex items-start justify-between px-8 pt-8 z-10">
+        {/* Name - top left */}
+        <div className="text-[15px] tracking-wide">
+          <Link href="/" className="hover:opacity-60 transition-opacity">
+            Shannon Delaney Stewart
+          </Link>
+        </div>
+
+        {/* Project name - top center */}
+        <div
+          className="absolute left-1/2 -translate-x-1/2 text-center cursor-pointer hover:opacity-60 transition-opacity"
+          onClick={nextProject}
+        >
+          <div className="text-[15px] tracking-wide">{project.name}</div>
+          <div className="text-[12px] text-neutral-400 mt-0.5">
+            {project.images.length} images
+          </div>
+        </div>
+
+        {/* Image counter - top right */}
+        <div className="text-[12px] text-neutral-400 tracking-wide">
+          {imageIndex + 1} / {project.images.length}
+        </div>
+      </div>
+
+      {/* Main image area */}
+      <div className="flex-1 flex items-center justify-end px-8 relative">
+        {/* Left arrow zone */}
+        <div
+          className="absolute left-0 top-0 bottom-0 w-1/3 z-20 cursor-w-resize"
+          onClick={prevImage}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+        {/* Right arrow zone */}
+        <div
+          className="absolute right-0 top-0 bottom-0 w-1/3 z-20 cursor-e-resize"
+          onClick={nextImage}
+        />
+
+        {/* Image */}
+        <div className="w-[58%] h-[75vh] relative">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={image}
+            alt={`${project.name} ${imageIndex + 1}`}
+            className="w-full h-full object-contain"
+            draggable={false}
+          />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </div>
+
+      {/* Bottom left links */}
+      <div className="absolute bottom-8 left-8 flex flex-col gap-1 text-[15px] z-10">
+        <Link
+          href="/about"
+          className="hover:opacity-60 transition-opacity"
+          style={{ color: "var(--accent)" }}
+        >
+          about
+        </Link>
+        <a
+          href="mailto:shannondelaneystewart@gmail.com"
+          className="hover:opacity-60 transition-opacity"
+          style={{ color: "var(--accent)" }}
+        >
+          email
+        </a>
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:opacity-60 transition-opacity"
+          style={{ color: "var(--accent)" }}
+        >
+          instagram
+        </a>
+      </div>
     </div>
   );
 }
