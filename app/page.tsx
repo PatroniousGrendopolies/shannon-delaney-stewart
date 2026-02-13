@@ -11,12 +11,12 @@ function ProjectSection({ project }: { project: typeof projects[0] }) {
   const prevImage = () => setCurrentImage((i) => (i - 1 + project.images.length) % project.images.length);
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen" style={{ padding: '0 4rem' }}>
       {/* Left column - name area (about 25%) */}
-      <div className="w-[25%] px-[3rem]" />
+      <div className="w-[25%]" />
 
       {/* Middle column - project info (about 25%), top-aligned */}
-      <div className="w-[25%] pt-[3rem]">
+      <div className="w-[25%]" style={{ paddingTop: '4rem' }}>
         <div className="text-[15px] leading-relaxed">
           <p style={{ color: "var(--accent)" }}>{project.name}</p>
           {project.collaborator && (
@@ -27,7 +27,7 @@ function ProjectSection({ project }: { project: typeof projects[0] }) {
       </div>
 
       {/* Right column - slideshow (50%) */}
-      <div className="w-[50%] flex items-center justify-end pr-[3rem] min-h-screen relative">
+      <div className="w-[50%] flex items-center justify-end min-h-screen relative">
         <div className="relative h-[70vh]">
           {/* Left click zone */}
           <div
@@ -56,14 +56,14 @@ export default function Home() {
   return (
     <div className="relative">
       {/* Fixed name - top left */}
-      <div className="fixed top-0 left-0 px-[3rem] pt-[3rem] z-50">
+      <div className="fixed top-0 left-0 z-50" style={{ padding: '4rem' }}>
         <Link href="/" className="text-[15px] tracking-normal hover:opacity-60 transition-opacity" style={{ color: "var(--accent)" }}>
           Shannon Delaney Stewart
         </Link>
       </div>
 
       {/* Fixed links - bottom left */}
-      <div className="fixed bottom-0 left-0 px-[3rem] pb-[3rem] z-50">
+      <div className="fixed bottom-0 left-0 z-50" style={{ padding: '4rem' }}>
         <div className="flex flex-col gap-0 text-[15px] leading-relaxed">
           <Link
             href="/about"
