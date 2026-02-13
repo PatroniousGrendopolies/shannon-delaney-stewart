@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --accent: #D94225;
+  --accent: #EF3E23;
 }
 
 * {
@@ -26,7 +26,6 @@ a {
   color: #fff;
 }
 
-/* Scrollbar minimal */
 ::-webkit-scrollbar {
   width: 0px;
 }
