@@ -105,7 +105,7 @@ function InfoToggle() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div style={{ ...textStyle, marginTop: '0.25rem' }}>
+    <div style={{ ...textStyle, marginTop: '0.1rem' }}>
       <span
         onClick={() => setOpen(!open)}
         style={{ color: '#000', cursor: 'pointer' }}
