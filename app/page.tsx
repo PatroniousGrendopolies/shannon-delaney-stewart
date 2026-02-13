@@ -20,7 +20,7 @@ function ProjectSection({ project }: { project: typeof projects[0] }) {
       {/* Middle column - project info, top-aligned */}
       <div style={{ width: '22%', paddingTop: '1.5rem' }}>
         <div style={{ ...textStyle, lineHeight: '1.6' }}>
-          <p><a href="#" style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>{project.name}</a></p>
+          <p><a href="#" style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '1px' }}>{project.name}</a></p>
           {project.collaborator && <p>{project.collaborator}</p>}
           <p>{project.images.length} images</p>
         </div>
@@ -75,7 +75,7 @@ function InfoToggle() {
             </a>
           </p>
           <p style={{ marginBottom: '0.5rem' }}>
-            <a href="https://www.instagram.com/shannondelaneystewart/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+            <a href="https://www.instagram.com/shannondelaneystewart/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', textUnderlineOffset: '1px' }}>
               Instagram
             </a>
           </p>
@@ -102,7 +102,7 @@ export default function Home() {
     <div style={{ position: 'relative' }}>
       {/* Fixed name + info - top left */}
       <div style={{ position: 'fixed', top: 0, left: 0, padding: '1.5rem', zIndex: 50 }}>
-        <Link href="/" style={{ ...textStyle, color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+        <Link href="/" style={{ ...textStyle, color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '1px' }}>
           Shannon Delaney Stewart
         </Link>
         <InfoToggle />
