@@ -162,9 +162,7 @@ export default function Home() {
       {/* Scrollable project feed */}
       <div>
         {projects.map((project) => (
-          project.slug === 'color-card' 
-            ? <PairedProjectSection key={project.slug} project={project} />
-            : <ProjectSection key={project.slug} project={project} />
+          <ProjectSection key={project.slug} project={project} />
         ))}
       </div>
     </div>
