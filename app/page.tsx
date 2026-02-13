@@ -27,7 +27,7 @@ function ProjectSection({ project }: { project: typeof projects[0] }) {
       </div>
 
       {/* Right column - slideshow (50%) */}
-      <div className="w-[50%] flex items-center justify-end min-h-screen relative">
+      <div className="w-[50%] flex items-start justify-end min-h-screen relative" style={{ paddingTop: "4rem" }}>
         <div className="relative h-[70vh]">
           {/* Left click zone */}
           <div
