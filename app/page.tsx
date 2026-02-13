@@ -24,8 +24,8 @@ function ProjectSection({ project }: { project: typeof projects[0] }) {
       </div>
 
       {/* Right column - slideshow (67%) */}
-      <div className="w-[66.67%] flex items-center justify-start min-h-screen relative">
-        <div className="relative h-[80vh] max-w-full" style={{ aspectRatio: 'auto' }}>
+      <div className="w-[66.67%] flex items-center justify-end pr-[1.9rem] min-h-screen relative">
+        <div className="relative h-[70vh]">
           {/* Left click zone */}
           <div
             className="absolute left-0 top-0 bottom-0 w-1/3 z-10 cursor-w-resize"
@@ -40,7 +40,7 @@ function ProjectSection({ project }: { project: typeof projects[0] }) {
           <img
             src={project.images[currentImage]}
             alt={`${project.name} ${currentImage + 1}`}
-            className="h-full w-auto max-w-[calc(66.67vw-3.8rem)] object-contain"
+            className="h-full w-auto object-contain"
             draggable={false}
           />
         </div>
@@ -52,14 +52,16 @@ function ProjectSection({ project }: { project: typeof projects[0] }) {
 export default function Home() {
   return (
     <div className="relative">
-      {/* Fixed name - top left, pinned in the 33% column */}
-      <div className="fixed top-0 left-0 w-[33.33%] px-[1.9rem] pt-[1.9rem] z-50">
-        <Link href="/" className="text-[15px] tracking-normal hover:opacity-60 transition-opacity">
-          Shannon Delaney Stewart
-        </Link>
+      {/* Fixed header row - name left, project nav right */}
+      <div className="fixed top-0 left-0 right-0 flex px-[1.9rem] pt-[1.9rem] z-50">
+        <div className="w-[33.33%]">
+          <Link href="/" className="text-[15px] tracking-normal hover:opacity-60 transition-opacity">
+            Shannon Delaney Stewart
+          </Link>
+        </div>
       </div>
 
-      {/* Fixed links - bottom left, pinned in the 33% column */}
+      {/* Fixed links - bottom left */}
       <div className="fixed bottom-0 left-0 w-[33.33%] px-[1.9rem] pb-[1.9rem] z-50">
         <div className="flex flex-col gap-0 text-[15px] leading-relaxed">
           <Link
