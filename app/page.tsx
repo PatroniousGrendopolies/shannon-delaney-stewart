@@ -74,8 +74,22 @@ function InfoToggle() {
               shannondelaneystewart@gmail.com
             </a>
           </p>
-          <p style={{ fontWeight: 500 }}>
+          <p style={{ marginBottom: '0.5rem' }}>
+            <a href="https://www.instagram.com/shannondelaneystewart/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+              Instagram
+            </a>
+          </p>
+          <p style={{ fontWeight: 500, marginBottom: '1rem' }}>
             Commercial portfolio available upon request
+          </p>
+          <p style={{ fontStyle: 'italic', marginBottom: '0.25rem' }}>Education</p>
+          <p style={{ marginBottom: '1rem' }}>Photography BFA, Emily Carr University of Art and Design 2016</p>
+          <p style={{ fontStyle: 'italic', marginBottom: '0.25rem' }}>Features&amp;Commissions&amp;Press&amp;Clients</p>
+          <p>
+            VOGUE ITALIA, VICE, THE FADER, Lululemon, SSENSE (- Bottega Veneta, Prada, Gucci,
+            Diesel, Eckhaus Latta, ERL, Jacquemus, Jil Sander, Maison Margiela, Mowalola, Raf Simons,
+            Rick Owens, Vivienne Westwood + more), Rudsak, Porn Hub, Bench, Strawberry Western,
+            L'Oeuvre, INDIE, IRL, SNUFF....
           </p>
         </div>
       )}
