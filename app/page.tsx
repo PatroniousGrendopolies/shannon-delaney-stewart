@@ -31,8 +31,8 @@ function PairedProjectSection({ project }: { project: typeof projects[0] }) {
           <p>{project.images.length} images</p>
         </div>
       </div>
-      <div style={{ width: '53%', display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '1.5rem', minHeight: '100vh', position: 'relative' }}>
-        <div style={{ position: 'relative', height: '80vh', display: 'flex', gap: '0.75rem', maxWidth: '100%', overflow: 'hidden' }}>
+      <div style={{ width: '53%', paddingTop: '1.5rem', minHeight: '100vh', position: 'relative' }}>
+        <div style={{ position: 'relative', display: 'flex', gap: '0.5rem', height: '75vh' }}>
           <div
             style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '33%', zIndex: 10, cursor: 'w-resize' }}
             onClick={prevPair}
@@ -47,7 +47,7 @@ function PairedProjectSection({ project }: { project: typeof projects[0] }) {
               key={`${pairIndex}-${i}`}
               src={src}
               alt={`${project.name} ${pairIndex * 2 + i + 1}`}
-              style={{ height: '100%', width: 'auto', maxWidth: '48%', objectFit: 'contain' }}
+              style={{ height: '100%', width: 'auto', objectFit: 'cover', flex: '0 0 auto' }}
               draggable={false}
             />
           ))}
@@ -126,7 +126,7 @@ function InfoToggle() {
             VOGUE ITALIA, VICE, THE FADER, Lululemon, SSENSE (- Bottega Veneta, Prada, Gucci,
             Diesel, Eckhaus Latta, ERL, Jacquemus, Jil Sander, Maison Margiela, Mowalola, Raf Simons,
             Rick Owens, Vivienne Westwood + more), Rudsak, Porn Hub, Bench, Strawberry Western,
-            L\u0027Oeuvre, INDIE, IRL, SNUFF....
+            L&apos;Oeuvre, INDIE, IRL, SNUFF....
           </p>
           <p style={{ marginBottom: '0.75rem', marginTop: '1.25rem' }}>
             For commissions contact{' '}
