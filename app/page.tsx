@@ -25,7 +25,7 @@ function PairedProjectSection({ project }: { project: typeof projects[0] }) {
     <div style={{ display: 'flex', minHeight: '100vh', padding: '0 1.5rem' }}>
       <div style={{ width: '25%' }} />
       <div style={{ width: '22%', paddingTop: '1.5rem' }}>
-        <div style={{ ...textStyle, lineHeight: '1.6' }}>
+        <div style={{ ...textStyle, lineHeight: '1.25' }}>
           <p><a href="#" style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '1px' }}>{project.name}</a></p>
           {project.collaborator && <p>{project.collaborator}</p>}
           <p>{project.images.length} images</p>
@@ -70,7 +70,7 @@ function ProjectSection({ project }: { project: typeof projects[0] }) {
 
       {/* Middle column - project info, top-aligned */}
       <div style={{ width: '22%', paddingTop: '1.5rem' }}>
-        <div style={{ ...textStyle, lineHeight: '1.6' }}>
+        <div style={{ ...textStyle, lineHeight: '1.25' }}>
           <p><a href="#" style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '1px' }}>{project.name}</a></p>
           {project.collaborator && <p>{project.collaborator}</p>}
           <p>{project.images.length} images</p>
@@ -105,7 +105,7 @@ function InfoToggle() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div style={{ ...textStyle, marginTop: '0.1rem' }}>
+    <div style={{ ...textStyle, marginTop: '-0.15rem' }}>
       <span
         onClick={() => setOpen(!open)}
         style={{ color: '#000', cursor: 'pointer' }}
