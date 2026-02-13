@@ -43,7 +43,7 @@ function ProjectSection({ project }: { project: typeof projects[0] }) {
           <img
             src={project.images[currentImage]}
             alt={`${project.name} ${currentImage + 1}`}
-            className="h-full w-auto object-contain"
+            className="h-full w-auto max-w-full object-contain"
             draggable={false}
           />
         </div>
