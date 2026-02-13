@@ -4,6 +4,8 @@ import { useState } from "react";
 import { projects } from "@/lib/projects";
 import Link from "next/link";
 
+const textStyle = { fontFamily: '"EB Garamond", serif', fontSize: '1.2rem', fontWeight: 400 };
+
 function ProjectSection({ project }: { project: typeof projects[0] }) {
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -17,7 +19,7 @@ function ProjectSection({ project }: { project: typeof projects[0] }) {
 
       {/* Middle column - project info, top-aligned */}
       <div style={{ width: '22%', paddingTop: '1.5rem' }}>
-        <div style={{ fontSize: '15px', lineHeight: '1.6' }}>
+        <div style={{ ...textStyle, lineHeight: '1.6' }}>
           <p><a href="#" style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>{project.name}</a></p>
           {project.collaborator && <p>{project.collaborator}</p>}
           <p>{project.images.length} images</p>
@@ -48,18 +50,48 @@ function ProjectSection({ project }: { project: typeof projects[0] }) {
   );
 }
 
+function InfoToggle() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div style={{ ...textStyle, marginTop: '0.25rem' }}>
+      <span
+        onClick={() => setOpen(!open)}
+        style={{ color: '#000', cursor: 'pointer' }}
+      >
+        info
+      </span>
+      {open && (
+        <div style={{ marginTop: '0.75rem', lineHeight: '1.6', maxWidth: '280px' }}>
+          <p style={{ marginBottom: '0.5rem' }}>
+            Shannon Delaney Stewart is a photographer based in Tiohtià:ke, the territory of the
+            Kanien&apos;keha:ka (Montréal, Québec). She specializes in portraiture, editorial, and
+            e-commerce imagery.
+          </p>
+          <p style={{ marginBottom: '0.5rem' }}>
+            For commissions contact{' '}
+            <a href="mailto:shannondelaneystewart@gmail.com" style={{ fontStyle: 'italic' }}>
+              shannondelaneystewart@gmail.com
+            </a>
+          </p>
+          <p style={{ fontWeight: 500 }}>
+            Commercial portfolio available upon request
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <div style={{ position: 'relative' }}>
-      {/* Fixed name - top left */}
+      {/* Fixed name + info - top left */}
       <div style={{ position: 'fixed', top: 0, left: 0, padding: '1.5rem', zIndex: 50 }}>
-        <Link href="/" style={{ fontSize: '15px', color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+        <Link href="/" style={{ ...textStyle, color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>
           Shannon Delaney Stewart
         </Link>
-        <br />
-        <Link href="/about" style={{ fontSize: '15px', color: '#000', textDecoration: 'none' }}>
-          info
-        </Link>
+        <InfoToggle />
       </div>
 
       {/* Scrollable project feed */}
