@@ -58,21 +58,6 @@ export default function Home() {
         </Link>
       </div>
 
-      {/* Fixed links - bottom left */}
-      <div style={{ position: 'fixed', bottom: 0, left: 0, padding: '1.5rem', zIndex: 50 }}>
-        <div style={{ display: 'flex', flexDirection: 'column', fontSize: '15px', lineHeight: '1.6' }}>
-          <Link href="/about" style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>
-            about
-          </Link>
-          <a href="mailto:shannondelaneystewart@gmail.com" style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>
-            email
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>
-            instagram
-          </a>
-        </div>
-      </div>
-
       {/* Scrollable project feed */}
       <div>
         {projects.map((project) => (
