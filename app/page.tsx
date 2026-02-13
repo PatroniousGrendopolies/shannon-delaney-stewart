@@ -32,7 +32,7 @@ function PairedProjectSection({ project }: { project: typeof projects[0] }) {
         </div>
       </div>
       <div style={{ width: '53%', display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '1.5rem', minHeight: '100vh', position: 'relative' }}>
-        <div style={{ position: 'relative', height: '85vh', display: 'flex', gap: '0.75rem' }}>
+        <div style={{ position: 'relative', height: '80vh', display: 'flex', gap: '0.75rem', maxWidth: '100%', overflow: 'hidden' }}>
           <div
             style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '33%', zIndex: 10, cursor: 'w-resize' }}
             onClick={prevPair}
@@ -47,7 +47,7 @@ function PairedProjectSection({ project }: { project: typeof projects[0] }) {
               key={`${pairIndex}-${i}`}
               src={src}
               alt={`${project.name} ${pairIndex * 2 + i + 1}`}
-              style={{ height: '100%', width: 'auto', objectFit: 'contain' }}
+              style={{ height: '100%', width: 'auto', maxWidth: '48%', objectFit: 'contain' }}
               draggable={false}
             />
           ))}
