@@ -10,17 +10,17 @@ export const projects: Project[] = [
     name: "Color Card",
     slug: "color-card",
     images: [
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1200&h=800&fit=crop",
+      "/images/color-card/01.jpg",
+      "/images/color-card/02.jpg",
+      "/images/color-card/03.jpg",
+      "/images/color-card/04.jpg",
     ],
   },
   {
     name: "Sebastian in 360 lighting",
     slug: "sebastian-in-360-lighting",
     images: [
-      "/images/sebastian/01.jpg",
-      "/images/sebastian/02.jpg",
-      "/images/sebastian/03.jpg",
-      "/images/sebastian/04.jpg",
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1200&h=800&fit=crop",
     ],
   },
 ];
