@@ -4,12 +4,16 @@
   --accent: #E85D3A;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: var(--font-eb-garamond), "EB Garamond", Georgia, serif;
   background: #fff;
   color: #000;
-  margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 a {
@@ -20,4 +24,9 @@ a {
 ::selection {
   background: var(--accent);
   color: #fff;
+}
+
+/* Scrollbar minimal */
+::-webkit-scrollbar {
+  width: 0px;
 }

@@ -1,6 +1,7 @@
 export type Project = {
   name: string;
   slug: string;
+  collaborator?: string;
   images: string[];
 };
 
@@ -20,18 +21,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    name: "Still Life",
-    slug: "still-life",
-    images: [
-      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=1200&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=1200&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1529892485953-f4acfffd2e6a?w=1200&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1523779105320-d1cd346ff52b?w=1200&h=800&fit=crop",
-    ],
-  },
-  {
     name: "Fashion Editorial",
     slug: "fashion-editorial",
     images: [
@@ -45,17 +34,6 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=1200&h=800&fit=crop",
       "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=1200&h=800&fit=crop",
       "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=1200&h=800&fit=crop",
-    ],
-  },
-  {
-    name: "Landscapes",
-    slug: "landscapes",
-    images: [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=1200&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1200&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1200&h=800&fit=crop",
     ],
   },
 ];
