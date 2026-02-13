@@ -20,7 +20,17 @@ export const projects: Project[] = [
     name: "Sebastian in 360 lighting",
     slug: "sebastian-in-360-lighting",
     images: [
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1200&h=800&fit=crop",
+      "/images/sebastian/01.jpg",
+      "/images/sebastian/02.jpg",
+      "/images/sebastian/03.jpg",
+      "/images/sebastian/04.jpg",
+      "/images/sebastian/05.jpg",
+      "/images/sebastian/06.jpg",
+      "/images/sebastian/07.jpg",
+      "/images/sebastian/08.jpg",
+      "/images/sebastian/09.jpg",
+      "/images/sebastian/10.jpg",
+      "/images/sebastian/11.jpg",
     ],
   },
 ];
