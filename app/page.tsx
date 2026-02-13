@@ -4,7 +4,7 @@ import { useState } from "react";
 import { projects } from "@/lib/projects";
 import Link from "next/link";
 
-const textStyle = { fontFamily: '"EB Garamond", serif', fontSize: '1.2rem', fontWeight: 400 };
+const textStyle = { fontFamily: '"EB Garamond", serif', fontSize: '0.95rem', fontWeight: 400 };
 
 function ProjectSection({ project }: { project: typeof projects[0] }) {
   const [currentImage, setCurrentImage] = useState(0);
