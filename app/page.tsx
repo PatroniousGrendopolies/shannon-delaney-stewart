@@ -4,40 +4,43 @@ import { useState } from "react";
 import { projects } from "@/lib/projects";
 import Link from "next/link";
 
-function ProjectSection({ project, index }: { project: typeof projects[0]; index: number }) {
+function ProjectSection({ project }: { project: typeof projects[0] }) {
   const [currentImage, setCurrentImage] = useState(0);
 
   const nextImage = () => setCurrentImage((i) => (i + 1) % project.images.length);
   const prevImage = () => setCurrentImage((i) => (i - 1 + project.images.length) % project.images.length);
 
   return (
-    <div className="flex min-h-screen border-b border-neutral-100 last:border-b-0">
-      {/* Left column - project info */}
-      <div className="w-[30%] flex flex-col justify-center px-8 lg:px-12">
-        <h2 className="text-[15px] lg:text-[17px] leading-snug mb-1">
-          {project.name}
-        </h2>
-        {project.collaborator && (
-          <p className="text-[13px] text-neutral-400 mb-2">{project.collaborator}</p>
-        )}
-        <p className="text-[13px] text-neutral-400">
-          {currentImage + 1} / {project.images.length}
-        </p>
+    <div className="flex min-h-screen">
+      {/* Left column - project info (33%) */}
+      <div className="w-[33.33%] flex flex-col justify-center px-[1.9rem]">
+        <div className="text-[15px] leading-relaxed">
+          <p>{project.name}</p>
+          {project.collaborator && (
+            <p className="text-neutral-400">{project.collaborator}</p>
+          )}
+          <p>{project.images.length} images</p>
+        </div>
       </div>
 
-      {/* Right column - image */}
-      <div className="w-[70%] flex items-center justify-center py-8 pr-8 lg:pr-12 relative">
-        <div className="relative w-full h-[85vh] cursor-pointer" onClick={nextImage}>
+      {/* Right column - slideshow (67%) */}
+      <div className="w-[66.67%] flex items-center py-4 pr-[1.9rem] relative min-h-screen">
+        <div className="relative w-full h-[90vh]">
           {/* Left click zone */}
           <div
             className="absolute left-0 top-0 bottom-0 w-1/3 z-10 cursor-w-resize"
-            onClick={(e) => { e.stopPropagation(); prevImage(); }}
+            onClick={prevImage}
+          />
+          {/* Right click zone */}
+          <div
+            className="absolute right-0 top-0 bottom-0 w-2/3 z-10 cursor-e-resize"
+            onClick={nextImage}
           />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={project.images[currentImage]}
             alt={`${project.name} ${currentImage + 1}`}
-            className="w-full h-full object-contain"
+            className="w-full h-full object-contain object-left"
             draggable={false}
           />
         </div>
@@ -49,44 +52,46 @@ function ProjectSection({ project, index }: { project: typeof projects[0]; index
 export default function Home() {
   return (
     <div className="relative">
-      {/* Fixed name - top left */}
-      <div className="fixed top-8 left-8 lg:left-12 z-50 text-[15px] tracking-wide">
-        <Link href="/" className="hover:opacity-60 transition-opacity">
+      {/* Fixed name - top left, pinned in the 33% column */}
+      <div className="fixed top-0 left-0 w-[33.33%] px-[1.9rem] pt-[1.9rem] z-50">
+        <Link href="/" className="text-[15px] tracking-normal hover:opacity-60 transition-opacity">
           Shannon Delaney Stewart
         </Link>
       </div>
 
-      {/* Fixed links - bottom left */}
-      <div className="fixed bottom-8 left-8 lg:left-12 z-50 flex flex-col gap-1 text-[13px]">
-        <Link
-          href="/about"
-          className="hover:opacity-60 transition-opacity"
-          style={{ color: "var(--accent)" }}
-        >
-          about
-        </Link>
-        <a
-          href="mailto:shannondelaneystewart@gmail.com"
-          className="hover:opacity-60 transition-opacity"
-          style={{ color: "var(--accent)" }}
-        >
-          email
-        </a>
-        <a
-          href="https://instagram.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:opacity-60 transition-opacity"
-          style={{ color: "var(--accent)" }}
-        >
-          instagram
-        </a>
+      {/* Fixed links - bottom left, pinned in the 33% column */}
+      <div className="fixed bottom-0 left-0 w-[33.33%] px-[1.9rem] pb-[1.9rem] z-50">
+        <div className="flex flex-col gap-0 text-[15px] leading-relaxed">
+          <Link
+            href="/about"
+            className="hover:opacity-60 transition-opacity"
+            style={{ color: "var(--accent)" }}
+          >
+            about
+          </Link>
+          <a
+            href="mailto:shannondelaneystewart@gmail.com"
+            className="hover:opacity-60 transition-opacity"
+            style={{ color: "var(--accent)" }}
+          >
+            email
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-60 transition-opacity"
+            style={{ color: "var(--accent)" }}
+          >
+            instagram
+          </a>
+        </div>
       </div>
 
       {/* Scrollable project feed */}
       <div>
-        {projects.map((project, i) => (
-          <ProjectSection key={project.slug} project={project} index={i} />
+        {projects.map((project) => (
+          <ProjectSection key={project.slug} project={project} />
         ))}
       </div>
     </div>
