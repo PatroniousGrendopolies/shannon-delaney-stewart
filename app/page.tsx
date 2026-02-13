@@ -62,7 +62,7 @@ function InfoToggle() {
         info
       </span>
       {open && (
-        <div style={{ marginTop: '0.75rem', lineHeight: '1.6', maxWidth: '280px' }}>
+        <div style={{ marginTop: '0.75rem', lineHeight: '1.6', maxWidth: '280px', textAlign: 'justify' as const }}>
           <p style={{ marginBottom: '0.75rem' }}>
             Shannon Delaney Stewart is a photographer based in Tiohtià:ke, the territory of the
             Kanien&apos;keha:ka (Montréal, Québec). She specializes in portraiture, editorial, and
@@ -77,7 +77,7 @@ function InfoToggle() {
             Rick Owens, Vivienne Westwood + more), Rudsak, Porn Hub, Bench, Strawberry Western,
             L\u0027Oeuvre, INDIE, IRL, SNUFF....
           </p>
-          <p style={{ marginBottom: '0.75rem' }}>
+          <p style={{ marginBottom: '0.75rem', marginTop: '1.25rem' }}>
             For commissions contact{' '}
             <a href="mailto:shannondelaneystewart@gmail.com" style={{ fontStyle: 'italic' }}>
               shannondelaneystewart@gmail.com
