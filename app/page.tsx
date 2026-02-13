@@ -63,33 +63,33 @@ function InfoToggle() {
       </span>
       {open && (
         <div style={{ marginTop: '0.75rem', lineHeight: '1.6', maxWidth: '280px' }}>
-          <p style={{ marginBottom: '0.5rem' }}>
+          <p style={{ marginBottom: '0.75rem' }}>
             Shannon Delaney Stewart is a photographer based in Tiohtià:ke, the territory of the
             Kanien&apos;keha:ka (Montréal, Québec). She specializes in portraiture, editorial, and
             e-commerce imagery.
           </p>
-          <p style={{ marginBottom: '0.5rem' }}>
+          <p style={{ fontStyle: 'italic', marginBottom: '0.25rem' }}>Education</p>
+          <p style={{ marginBottom: '0.75rem' }}>Photography BFA, Emily Carr University of Art and Design 2016</p>
+          <p style={{ fontStyle: 'italic', marginBottom: '0.25rem' }}>Features&amp;Commissions&amp;Press&amp;Clients</p>
+          <p style={{ marginBottom: '0.75rem' }}>
+            VOGUE ITALIA, VICE, THE FADER, Lululemon, SSENSE (- Bottega Veneta, Prada, Gucci,
+            Diesel, Eckhaus Latta, ERL, Jacquemus, Jil Sander, Maison Margiela, Mowalola, Raf Simons,
+            Rick Owens, Vivienne Westwood + more), Rudsak, Porn Hub, Bench, Strawberry Western,
+            L\u0027Oeuvre, INDIE, IRL, SNUFF....
+          </p>
+          <p style={{ marginBottom: '0.75rem' }}>
             For commissions contact{' '}
             <a href="mailto:shannondelaneystewart@gmail.com" style={{ fontStyle: 'italic' }}>
               shannondelaneystewart@gmail.com
             </a>
           </p>
-          <p style={{ marginBottom: '0.5rem' }}>
+          <p style={{ marginBottom: '0.75rem' }}>
             <a href="https://www.instagram.com/shannondelaneystewart/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', textUnderlineOffset: '1px' }}>
               Instagram
             </a>
           </p>
-          <p style={{ fontWeight: 500, marginBottom: '1rem' }}>
+          <p style={{ fontWeight: 500 }}>
             Commercial portfolio available upon request
-          </p>
-          <p style={{ fontStyle: 'italic', marginBottom: '0.25rem' }}>Education</p>
-          <p style={{ marginBottom: '1rem' }}>Photography BFA, Emily Carr University of Art and Design 2016</p>
-          <p style={{ fontStyle: 'italic', marginBottom: '0.25rem' }}>Features&amp;Commissions&amp;Press&amp;Clients</p>
-          <p>
-            VOGUE ITALIA, VICE, THE FADER, Lululemon, SSENSE (- Bottega Veneta, Prada, Gucci,
-            Diesel, Eckhaus Latta, ERL, Jacquemus, Jil Sander, Maison Margiela, Mowalola, Raf Simons,
-            Rick Owens, Vivienne Westwood + more), Rudsak, Porn Hub, Bench, Strawberry Western,
-            L'Oeuvre, INDIE, IRL, SNUFF....
           </p>
         </div>
       )}
