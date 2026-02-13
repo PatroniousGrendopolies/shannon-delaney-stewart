@@ -18,7 +18,7 @@ function ProjectSection({ project }: { project: typeof projects[0] }) {
       {/* Middle column - project info (about 25%), top-aligned */}
       <div className="w-[25%]" style={{ paddingTop: '4rem' }}>
         <div className="text-[15px] leading-relaxed">
-          <p style={{ color: "var(--accent)" }}>{project.name}</p>
+          <p style={{ color: "var(--accent)" }} className="underline underline-offset-4">{project.name}</p>
           {project.collaborator && (
             <p>{project.collaborator}</p>
           )}
@@ -57,7 +57,7 @@ export default function Home() {
     <div className="relative">
       {/* Fixed name - top left */}
       <div className="fixed top-0 left-0 z-50" style={{ padding: '4rem' }}>
-        <Link href="/" className="text-[15px] tracking-normal hover:opacity-60 transition-opacity" style={{ color: "var(--accent)" }}>
+        <Link href="/" className="text-[15px] tracking-normal hover:opacity-60 transition-opacity underline underline-offset-4" style={{ color: "var(--accent)" }}>
           Shannon Delaney Stewart
         </Link>
       </div>
