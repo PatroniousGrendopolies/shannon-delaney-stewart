@@ -24,8 +24,8 @@ function ProjectSection({ project }: { project: typeof projects[0] }) {
       </div>
 
       {/* Right column - slideshow (67%) */}
-      <div className="w-[66.67%] flex items-center py-4 pr-[1.9rem] relative min-h-screen">
-        <div className="relative w-full h-[90vh]">
+      <div className="w-[66.67%] flex items-center justify-start min-h-screen relative">
+        <div className="relative h-[80vh] max-w-full" style={{ aspectRatio: 'auto' }}>
           {/* Left click zone */}
           <div
             className="absolute left-0 top-0 bottom-0 w-1/3 z-10 cursor-w-resize"
@@ -40,7 +40,7 @@ function ProjectSection({ project }: { project: typeof projects[0] }) {
           <img
             src={project.images[currentImage]}
             alt={`${project.name} ${currentImage + 1}`}
-            className="w-full h-full object-contain object-left"
+            className="h-full w-auto max-w-[calc(66.67vw-3.8rem)] object-contain"
             draggable={false}
           />
         </div>
