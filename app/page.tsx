@@ -56,6 +56,10 @@ export default function Home() {
         <Link href="/" style={{ fontSize: '15px', color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>
           Shannon Delaney Stewart
         </Link>
+        <br />
+        <Link href="/about" style={{ fontSize: '15px', color: '#000', textDecoration: 'none' }}>
+          info
+        </Link>
       </div>
 
       {/* Scrollable project feed */}
