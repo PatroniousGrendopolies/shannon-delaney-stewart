@@ -128,7 +128,7 @@ function InfoToggle() {
             VOGUE ITALIA, VICE, THE FADER, Lululemon, SSENSE (- Bottega Veneta, Prada, Gucci,
             Diesel, Eckhaus Latta, ERL, Jacquemus, Jil Sander, Maison Margiela, Mowalola, Raf Simons,
             Rick Owens, Vivienne Westwood + more), Rudsak, Porn Hub, Bench, Strawberry Western,
-            L&apos;Oeuvre, INDIE, IRL, SNUFF....
+            L&apos;Oeuvre, INDIE, IRL, SNUFF, Curves by Sean Brown....
           </p>
           <p style={{ marginBottom: '0.4rem', marginTop: '1.8rem', textAlign: 'left' as const }}>
             For commissions contact{' '}
