@@ -113,7 +113,7 @@ function InfoToggle() {
         info
       </span>
       {open && (
-        <div style={{ marginTop: '0.5rem', lineHeight: '1.35', maxWidth: '280px' }}>
+        <div style={{ marginTop: '1.5rem', lineHeight: '1.35', maxWidth: '280px', textAlign: 'justify' as const }}>
           <p style={{ marginBottom: '0.4rem' }}>
             Shannon Delaney Stewart is a photographer based in Tiohtià:ke, the territory of the
             Kanien&apos;keha:ka (Montréal, Québec). She specializes in portraiture, editorial, and
