@@ -28,6 +28,7 @@ function PairedProjectSection({ project }: { project: typeof projects[0] }) {
         <div style={{ ...textStyle, lineHeight: '1.25' }}>
           <p><a href="#" style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '1px' }}>{project.name}</a></p>
           {project.collaborator && <p>{project.collaborator}</p>}
+          {project.collaborator2 && <p>{project.collaborator2}</p>}
           <p>{project.images.length} images</p>
         </div>
       </div>
@@ -73,6 +74,7 @@ function ProjectSection({ project }: { project: typeof projects[0] }) {
         <div style={{ ...textStyle, lineHeight: '1.25' }}>
           <p><a href="#" style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '1px' }}>{project.name}</a></p>
           {project.collaborator && <p>{project.collaborator}</p>}
+          {project.collaborator2 && <p>{project.collaborator2}</p>}
           <p>{project.images.length} images</p>
         </div>
       </div>

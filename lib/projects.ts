@@ -2,6 +2,7 @@ export type Project = {
   name: string;
   slug: string;
   collaborator?: string;
+  collaborator2?: string;
   images: string[];
 };
 
@@ -20,6 +21,7 @@ export const projects: Project[] = [
     name: "Lighting Map",
     slug: "lighting-map",
     collaborator: "Softbox at 30° up, 5° increments",
+    collaborator2: "In collaboration with Aabid Youssef",
     images: [
       "/images/sebastian/01.jpg",
       "/images/sebastian/02.jpg",
