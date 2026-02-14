@@ -113,28 +113,28 @@ function InfoToggle() {
         info
       </span>
       {open && (
-        <div style={{ marginTop: '0.75rem', lineHeight: '1.6', maxWidth: '280px', textAlign: 'justify' as const }}>
-          <p style={{ marginBottom: '0.75rem' }}>
+        <div style={{ marginTop: '0.5rem', lineHeight: '1.35', maxWidth: '280px' }}>
+          <p style={{ marginBottom: '0.4rem' }}>
             Shannon Delaney Stewart is a photographer based in Tiohtià:ke, the territory of the
             Kanien&apos;keha:ka (Montréal, Québec). She specializes in portraiture, editorial, and
             e-commerce imagery.
           </p>
-          <p style={{ fontStyle: 'italic', marginBottom: '0.25rem' }}>Education</p>
-          <p style={{ marginBottom: '0.75rem' }}>Photography BFA, Emily Carr University of Art and Design 2016</p>
-          <p style={{ fontStyle: 'italic', marginBottom: '0.25rem' }}>Features&amp;Commissions&amp;Press&amp;Clients</p>
-          <p style={{ marginBottom: '0.75rem' }}>
+          <p style={{ fontStyle: 'italic', marginBottom: '0.15rem' }}>Education</p>
+          <p style={{ marginBottom: '0.4rem' }}>Photography BFA, Emily Carr University of Art and Design 2016</p>
+          <p style={{ fontStyle: 'italic', marginBottom: '0.15rem' }}>Features&amp;Commissions&amp;Press&amp;Clients</p>
+          <p style={{ marginBottom: '0.4rem' }}>
             VOGUE ITALIA, VICE, THE FADER, Lululemon, SSENSE (- Bottega Veneta, Prada, Gucci,
             Diesel, Eckhaus Latta, ERL, Jacquemus, Jil Sander, Maison Margiela, Mowalola, Raf Simons,
             Rick Owens, Vivienne Westwood + more), Rudsak, Porn Hub, Bench, Strawberry Western,
             L&apos;Oeuvre, INDIE, IRL, SNUFF....
           </p>
-          <p style={{ marginBottom: '0.75rem', marginTop: '1.25rem' }}>
+          <p style={{ marginBottom: '0.4rem', marginTop: '0.6rem' }}>
             For commissions contact{' '}
             <a href="mailto:shannondelaneystewart@gmail.com" style={{ fontStyle: 'italic' }}>
               shannondelaneystewart@gmail.com
             </a>
           </p>
-          <p style={{ marginBottom: '0.75rem' }}>
+          <p style={{ marginBottom: '0.4rem' }}>
             <a href="https://www.instagram.com/shannondelaneystewart/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', textUnderlineOffset: '1px' }}>
               Instagram
             </a>
