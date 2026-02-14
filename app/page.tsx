@@ -130,7 +130,7 @@ function InfoToggle() {
             Rick Owens, Vivienne Westwood + more), Rudsak, Porn Hub, Bench, Strawberry Western,
             L&apos;Oeuvre, INDIE, IRL, SNUFF....
           </p>
-          <p style={{ marginBottom: '0.4rem', marginTop: '1.8rem' }}>
+          <p style={{ marginBottom: '0.4rem', marginTop: '1.8rem', textAlign: 'left' as const }}>
             For commissions contact{' '}
             <a href="mailto:shannondelaneystewart@gmail.com" style={{ fontStyle: 'italic' }}>
               shannondelaneystewart@gmail.com
