@@ -17,8 +17,9 @@ export const projects: Project[] = [
     ],
   },
   {
-    name: "Sebastian in 360 lighting",
-    slug: "sebastian-in-360-lighting",
+    name: "Lighting Map",
+    slug: "lighting-map",
+    collaborator: "Softbox at 30° up, 5° increments",
     images: [
       "/images/sebastian/01.jpg",
       "/images/sebastian/02.jpg",
