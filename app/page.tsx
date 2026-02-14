@@ -121,27 +121,27 @@ function InfoToggle() {
             Kanien&apos;keha:ka (Montréal, Québec). She specializes in portraiture, editorial, and
             e-commerce imagery.
           </p>
-          <p style={{ fontStyle: 'italic', marginBottom: '0.15rem' }}>Education</p>
+          <p style={{ fontStyle: 'italic', marginBottom: '0.15rem', marginTop: '1.2rem' }}>Education</p>
           <p style={{ marginBottom: '0.4rem' }}>Photography BFA, Emily Carr University of Art and Design 2016</p>
-          <p style={{ fontStyle: 'italic', marginBottom: '0.15rem' }}>Features&amp;Commissions&amp;Press&amp;Clients</p>
+          <p style={{ fontStyle: 'italic', marginBottom: '0.15rem', marginTop: '1.2rem' }}>Features&amp;Commissions&amp;Press&amp;Clients</p>
           <p style={{ marginBottom: '0.4rem' }}>
             VOGUE ITALIA, VICE, THE FADER, Lululemon, SSENSE (- Bottega Veneta, Prada, Gucci,
             Diesel, Eckhaus Latta, ERL, Jacquemus, Jil Sander, Maison Margiela, Mowalola, Raf Simons,
             Rick Owens, Vivienne Westwood + more), Rudsak, Porn Hub, Bench, Strawberry Western,
             L&apos;Oeuvre, INDIE, IRL, SNUFF....
           </p>
-          <p style={{ marginBottom: '0.4rem', marginTop: '1.5rem' }}>
+          <p style={{ marginBottom: '0.4rem', marginTop: '1.8rem' }}>
             For commissions contact{' '}
             <a href="mailto:shannondelaneystewart@gmail.com" style={{ fontStyle: 'italic' }}>
               shannondelaneystewart@gmail.com
             </a>
           </p>
-          <p style={{ marginBottom: '0.4rem', marginTop: '1rem' }}>
+          <p style={{ marginBottom: '0.4rem', marginTop: '1.5rem' }}>
             <a href="https://www.instagram.com/shannondelaneystewart/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', textUnderlineOffset: '1px' }}>
               Instagram
             </a>
           </p>
-          <p style={{ fontWeight: 500 }}>
+          <p style={{ fontWeight: 500, marginTop: '1.5rem' }}>
             Commercial portfolio available upon request
           </p>
         </div>
