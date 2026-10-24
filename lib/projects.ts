@@ -8,7 +8,7 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    name: "Color Card",
+    name: "Colour Card",
     slug: "color-card",
     images: [
       "/images/color-card/01.jpg",
@@ -20,7 +20,7 @@ export const projects: Project[] = [
   {
     name: "Lighting Map",
     slug: "lighting-map",
-    collaborator: "30° up, 5° increments",
+    collaborator: "30° high, 5° increments",
     collaborator2: "in collaboration with Aabid Youssef",
     images: [
       "/images/sebastian/01.jpg",

@@ -13,18 +13,48 @@ function ProjectSection({ project }: { project: typeof projects[0] }) {
   const prevImage = () => setCurrentImage((i) => (i - 1 + project.images.length) % project.images.length);
 
   return (
-    <div className="desktop-layout" style={{ display: 'flex', minHeight: '100vh', padding: '0 1.5rem' }}>
-      <div className="col-spacer" style={{ width: '25%' }} />
-      <div className="col-project-info" style={{ width: '22%', paddingTop: '1.5rem' }}>
-        <div style={{ ...textStyle, lineHeight: '1.25' }}>
-          <p><a href="#" style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '1px' }}>{project.name}</a></p>
+    <>
+      {/* Desktop layout */}
+      <div className="desktop-layout" style={{ display: 'flex', minHeight: '100vh', padding: '0 1.5rem' }}>
+        <div className="col-spacer" style={{ width: '25%' }} />
+        <div className="col-project-info" style={{ width: '22%', paddingTop: '1.5rem' }}>
+          <div style={{ ...textStyle, lineHeight: '1.25' }}>
+            <p><span style={{fontStyle: 'italic'}}>{project.name}</span></p>
+            {project.collaborator && <p>{project.collaborator}</p>}
+            {project.collaborator2 && <p>{project.collaborator2}</p>}
+            <p>{project.images.length} images</p>
+          </div>
+        </div>
+        <div className="col-image" style={{ width: '53%', display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '1.5rem', minHeight: '100vh' }}>
+          <div className="img-container" style={{ position: 'relative', height: '85vh' }}>
+            <div
+              style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '33%', zIndex: 10, cursor: 'w-resize' }}
+              onClick={prevImage}
+            />
+            <div
+              style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '67%', zIndex: 10, cursor: 'e-resize' }}
+              onClick={nextImage}
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={project.images[currentImage]}
+              alt={`${project.name} ${currentImage + 1}`}
+              style={{ height: '100%', width: 'auto', maxWidth: '100%', objectFit: 'contain' }}
+              draggable={false}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile layout */}
+      <div className="mobile-layout" style={{ padding: "1rem 1rem 0.5rem 1rem" }}>
+        <div style={{ ...textStyle, lineHeight: '1.25', marginBottom: '1rem' }}>
+          <p><span style={{fontStyle: 'italic'}}>{project.name}</span></p>
           {project.collaborator && <p>{project.collaborator}</p>}
           {project.collaborator2 && <p>{project.collaborator2}</p>}
           <p>{project.images.length} images</p>
         </div>
-      </div>
-      <div className="col-image" style={{ width: '53%', display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '1.5rem', minHeight: '100vh' }}>
-        <div className="img-container" style={{ position: 'relative', height: '85vh' }}>
+        <div style={{ position: 'relative', width: '100%' }}>
           <div
             style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '33%', zIndex: 10, cursor: 'w-resize' }}
             onClick={prevImage}
@@ -37,12 +67,12 @@ function ProjectSection({ project }: { project: typeof projects[0] }) {
           <img
             src={project.images[currentImage]}
             alt={`${project.name} ${currentImage + 1}`}
-            style={{ height: '100%', width: 'auto', maxWidth: '100%', objectFit: 'contain' }}
+            style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
             draggable={false}
           />
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -55,7 +85,7 @@ function InfoToggle() {
         onClick={() => setOpen(!open)}
         style={{ color: '#000', cursor: 'pointer' }}
       >
-        info
+        info ↓
       </span>
       {open && (
         <div className="info-content" style={{ marginTop: '3rem', lineHeight: '1.35', maxWidth: '280px', textAlign: 'justify' as const }}>
@@ -96,9 +126,20 @@ function InfoToggle() {
 export default function Home() {
   return (
     <div style={{ position: 'relative' }}>
+      <style>{`
+        @media (max-width: 768px) {
+          .desktop-layout { display: none !important; }
+          .mobile-layout { display: block !important; }
+          .fixed-header { position: relative !important; padding: 1rem !important; marginBottom: 0; }
+        }
+        @media (min-width: 769px) {
+          .mobile-layout { display: none !important; }
+        }
+      `}</style>
+
       {/* Name + info - fixed on desktop, relative on mobile */}
       <div className="fixed-header" style={{ position: 'fixed', top: 0, left: 0, padding: '1.5rem', zIndex: 50 }}>
-        <Link href="/" style={{ ...textStyle, color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '1px' }}>
+        <Link href="/" style={{ ...textStyle, color: '#000', textDecoration: 'none' }}>
           Shannon Delaney Stewart
         </Link>
         <InfoToggle />
