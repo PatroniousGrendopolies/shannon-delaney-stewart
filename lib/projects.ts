@@ -2,25 +2,38 @@ export type Project = {
   name: string;
   slug: string;
   collaborator?: string;
+  collaborator2?: string;
   images: string[];
 };
 
 export const projects: Project[] = [
   {
-    name: "Color Card",
+    name: "Colour Card",
     slug: "color-card",
     images: [
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1200&h=800&fit=crop",
+      "/images/color-card/01.jpg",
+      "/images/color-card/02.jpg",
+      "/images/color-card/03.jpg",
+      "/images/color-card/04.jpg",
     ],
   },
   {
-    name: "Sebastian in 360 lighting",
-    slug: "sebastian-in-360-lighting",
+    name: "Lighting Map",
+    slug: "lighting-map",
+    collaborator: "30° high, 5° increments",
+    collaborator2: "in collaboration with Aabid Youssef",
     images: [
       "/images/sebastian/01.jpg",
       "/images/sebastian/02.jpg",
       "/images/sebastian/03.jpg",
       "/images/sebastian/04.jpg",
+      "/images/sebastian/05.jpg",
+      "/images/sebastian/06.jpg",
+      "/images/sebastian/07.jpg",
+      "/images/sebastian/08.jpg",
+      "/images/sebastian/09.jpg",
+      "/images/sebastian/10.jpg",
+      "/images/sebastian/11.jpg",
     ],
   },
 ];

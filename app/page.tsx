@@ -4,89 +4,151 @@ import { useState } from "react";
 import { projects } from "@/lib/projects";
 import Link from "next/link";
 
-function ProjectSection({ project, index }: { project: typeof projects[0]; index: number }) {
+const textStyle = { fontFamily: '"EB Garamond", serif', fontSize: '0.95rem', fontWeight: 400 };
+
+function ProjectSection({ project }: { project: typeof projects[0] }) {
   const [currentImage, setCurrentImage] = useState(0);
 
   const nextImage = () => setCurrentImage((i) => (i + 1) % project.images.length);
   const prevImage = () => setCurrentImage((i) => (i - 1 + project.images.length) % project.images.length);
 
   return (
-    <div className="flex min-h-screen border-b border-neutral-100 last:border-b-0">
-      {/* Left column - project info */}
-      <div className="w-[30%] flex flex-col justify-center px-8 lg:px-12">
-        <h2 className="text-[15px] lg:text-[17px] leading-snug mb-1">
-          {project.name}
-        </h2>
-        {project.collaborator && (
-          <p className="text-[13px] text-neutral-400 mb-2">{project.collaborator}</p>
-        )}
-        <p className="text-[13px] text-neutral-400">
-          {currentImage + 1} / {project.images.length}
-        </p>
+    <>
+      {/* Desktop layout */}
+      <div className="desktop-layout" style={{ display: 'flex', minHeight: '100vh', padding: '0 1.5rem' }}>
+        <div className="col-spacer" style={{ width: '25%' }} />
+        <div className="col-project-info" style={{ width: '22%', paddingTop: '1.5rem' }}>
+          <div style={{ ...textStyle, lineHeight: '1.25' }}>
+            <p><span style={{fontStyle: 'italic'}}>{project.name}</span></p>
+            {project.collaborator && <p>{project.collaborator}</p>}
+            {project.collaborator2 && <p>{project.collaborator2}</p>}
+            <p>{project.images.length} images</p>
+          </div>
+        </div>
+        <div className="col-image" style={{ width: '53%', display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '1.5rem', minHeight: '100vh' }}>
+          <div className="img-container" style={{ position: 'relative', height: '85vh' }}>
+            <div
+              style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '33%', zIndex: 10, cursor: 'w-resize' }}
+              onClick={prevImage}
+            />
+            <div
+              style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '67%', zIndex: 10, cursor: 'e-resize' }}
+              onClick={nextImage}
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={project.images[currentImage]}
+              alt={`${project.name} ${currentImage + 1}`}
+              style={{ height: '100%', width: 'auto', maxWidth: '100%', objectFit: 'contain' }}
+              draggable={false}
+            />
+          </div>
+        </div>
       </div>
 
-      {/* Right column - image */}
-      <div className="w-[70%] flex items-center justify-center py-8 pr-8 lg:pr-12 relative">
-        <div className="relative w-full h-[85vh] cursor-pointer" onClick={nextImage}>
-          {/* Left click zone */}
+      {/* Mobile layout */}
+      <div className="mobile-layout" style={{ padding: "1rem 1rem 0.5rem 1rem" }}>
+        <div style={{ ...textStyle, lineHeight: '1.25', marginBottom: '1rem' }}>
+          <p><span style={{fontStyle: 'italic'}}>{project.name}</span></p>
+          {project.collaborator && <p>{project.collaborator}</p>}
+          {project.collaborator2 && <p>{project.collaborator2}</p>}
+          <p>{project.images.length} images</p>
+        </div>
+        <div style={{ position: 'relative', width: '100%' }}>
           <div
-            className="absolute left-0 top-0 bottom-0 w-1/3 z-10 cursor-w-resize"
-            onClick={(e) => { e.stopPropagation(); prevImage(); }}
+            style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '33%', zIndex: 10, cursor: 'w-resize' }}
+            onClick={prevImage}
+          />
+          <div
+            style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '67%', zIndex: 10, cursor: 'e-resize' }}
+            onClick={nextImage}
           />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={project.images[currentImage]}
             alt={`${project.name} ${currentImage + 1}`}
-            className="w-full h-full object-contain"
+            style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
             draggable={false}
           />
         </div>
       </div>
+    </>
+  );
+}
+
+function InfoToggle() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div style={{ ...textStyle, marginTop: '-0.15rem' }}>
+      <span
+        onClick={() => setOpen(!open)}
+        style={{ color: '#000', cursor: 'pointer' }}
+      >
+        info ↓
+      </span>
+      {open && (
+        <div className="info-content" style={{ marginTop: '3rem', lineHeight: '1.35', maxWidth: '280px', textAlign: 'justify' as const }}>
+          <p style={{ marginBottom: '0.4rem' }}>
+            Shannon Delaney Stewart is a photographer based in Tiohtià:ke, the territory of the
+            Kanien&apos;keha:ka (Montréal, Québec). She specializes in portraiture, editorial, and
+            e-commerce imagery.
+          </p>
+          <p style={{ fontStyle: 'italic', marginBottom: '0.15rem', marginTop: '1.2rem' }}>Education</p>
+          <p style={{ marginBottom: '0.4rem' }}>Photography BFA, Emily Carr University of Art and Design 2016</p>
+          <p style={{ fontStyle: 'italic', marginBottom: '0.15rem', marginTop: '1.2rem' }}>Features&amp;Commissions&amp;Press&amp;Clients</p>
+          <p style={{ marginBottom: '0.4rem' }}>
+            VOGUE ITALIA, VICE, THE FADER, Lululemon, SSENSE (- Bottega Veneta, Prada, Gucci,
+            Diesel, Eckhaus Latta, ERL, Jacquemus, Jil Sander, Maison Margiela, Mowalola, Raf Simons,
+            Rick Owens, Vivienne Westwood + more), Rudsak, Porn Hub, Bench, Strawberry Western,
+            L&apos;Oeuvre, INDIE, IRL, SNUFF, Curves by Sean Brown....
+          </p>
+          <p style={{ marginBottom: '0.4rem', marginTop: '1.8rem', textAlign: 'left' as const }}>
+            For commissions contact{' '}
+            <a href="mailto:shannondelaneystewart@gmail.com" style={{ fontStyle: 'italic' }}>
+              shannondelaneystewart@gmail.com
+            </a>
+          </p>
+          <p style={{ marginBottom: '0.4rem', marginTop: '1.5rem' }}>
+            <a href="https://www.instagram.com/shannondelaneystewart/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', textUnderlineOffset: '1px' }}>
+              Instagram
+            </a>
+          </p>
+          <p style={{ fontWeight: 500, marginTop: '1.5rem' }}>
+            Commercial portfolio available upon request
+          </p>
+        </div>
+      )}
     </div>
   );
 }
 
 export default function Home() {
   return (
-    <div className="relative">
-      {/* Fixed name - top left */}
-      <div className="fixed top-8 left-8 lg:left-12 z-50 text-[15px] tracking-wide">
-        <Link href="/" className="hover:opacity-60 transition-opacity">
+    <div style={{ position: 'relative' }}>
+      <style>{`
+        @media (max-width: 768px) {
+          .desktop-layout { display: none !important; }
+          .mobile-layout { display: block !important; }
+          .fixed-header { position: relative !important; padding: 1rem !important; marginBottom: 0; }
+        }
+        @media (min-width: 769px) {
+          .mobile-layout { display: none !important; }
+        }
+      `}</style>
+
+      {/* Name + info - fixed on desktop, relative on mobile */}
+      <div className="fixed-header" style={{ position: 'fixed', top: 0, left: 0, padding: '1.5rem', zIndex: 50 }}>
+        <Link href="/" style={{ ...textStyle, color: '#000', textDecoration: 'none' }}>
           Shannon Delaney Stewart
         </Link>
-      </div>
-
-      {/* Fixed links - bottom left */}
-      <div className="fixed bottom-8 left-8 lg:left-12 z-50 flex flex-col gap-1 text-[13px]">
-        <Link
-          href="/about"
-          className="hover:opacity-60 transition-opacity"
-          style={{ color: "var(--accent)" }}
-        >
-          about
-        </Link>
-        <a
-          href="mailto:shannondelaneystewart@gmail.com"
-          className="hover:opacity-60 transition-opacity"
-          style={{ color: "var(--accent)" }}
-        >
-          email
-        </a>
-        <a
-          href="https://instagram.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:opacity-60 transition-opacity"
-          style={{ color: "var(--accent)" }}
-        >
-          instagram
-        </a>
+        <InfoToggle />
       </div>
 
       {/* Scrollable project feed */}
       <div>
-        {projects.map((project, i) => (
-          <ProjectSection key={project.slug} project={project} index={i} />
+        {projects.map((project) => (
+          <ProjectSection key={project.slug} project={project} />
         ))}
       </div>
     </div>

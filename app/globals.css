@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --accent: #E85D3A;
+  --accent: #E8000D;
 }
 
 * {
@@ -26,7 +26,38 @@ a {
   color: #fff;
 }
 
-/* Scrollbar minimal */
 ::-webkit-scrollbar {
   width: 0px;
+}
+
+/* Mobile layout overrides */
+@media (max-width: 768px) {
+  .desktop-layout {
+    flex-direction: column !important;
+    min-height: auto !important;
+    padding: 0 1rem !important;
+  }
+  .desktop-layout .col-spacer {
+    display: none !important;
+  }
+  .desktop-layout .col-project-info {
+    width: 100% !important;
+    padding-top: 0 !important;
+    padding-bottom: 0.5rem !important;
+  }
+  .desktop-layout .col-image {
+    width: 100% !important;
+    min-height: auto !important;
+    padding-top: 0 !important;
+  }
+  .desktop-layout .col-image .img-container {
+    height: 60vh !important;
+  }
+  .fixed-header {
+    position: relative !important;
+    padding: 1rem !important;
+  }
+  .fixed-header .info-content {
+    max-width: 100% !important;
+  }
 }
